@@ -32,18 +32,14 @@ public class Servant
 		if(!fileCars.exists()) {
             try {
 				fileCars.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			} catch (IOException e) { e.printStackTrace(); }
         }
 		
 		fileUsers = new File("Users.txt");
 		if(!fileUsers.exists()) {
             try {
 				fileUsers.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			} catch (IOException e) { e.printStackTrace(); }
         }
 	}
 	
@@ -56,24 +52,6 @@ public class Servant
             LocalTime localTime1 = LocalTime.now();
             Files.write(fileC.toPath(), (car.toString() + System.lineSeparator() + localTime1 + " - Added" + System.lineSeparator()).getBytes());
 		}	
-	}
-
-	@Override
-	public void removeCar(int ID) throws IOException {
-/*		Car car = cars.values().stream()
-						.filter(c -> (c.getID()==(ID)))
-						.findFirst().get();
-		
-		cars.remove(car);
-//						.map(c -> c.getID());
-		
-		Files.write(file.toPath(), (cars.values().stream()
-										.map(c -> c.toString())
-										.collect(Collectors.joining(System.lineSeparator()))).getBytes());
-		/*List<String> list =
-            		Files.readAllLines(file.toPath());
-		list.forEach(System.out::println);
-		list.remove()*/
 	}
 
 	@Override
